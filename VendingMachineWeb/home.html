@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VendingMachineWeb</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark mb-2">
+  <h1 class="navbar-brand">Vending Machine</h1>
+</nav>
+
+
+<div class="container">
+
+
+  <!-- ERROR MESSAGES -->
+  <div>
+<ul class="list-group" id="errorMessages"></ul>
+</div>
+
+  <div class="row mt-3">
+
+
+
+    <!-- Vending Items -->
+    <div class="col-sm-8 m-1">
+    <div class="card-deck" id="vending-items">
+    </div>
+
+
+    
+    </div>
+
+
+  <!-- Vending Controller -->
+
+    <div class="col-sm-3 m-1" id="Vending-Controller">
+     
+     <!-- Add Money Form  -->
+<form id="add-money-form">
+  <div class="form-row">
+    <div class="col-sm-12">
+      <label for="total-money">Total $:</label>
+      <input type="text" class="form-control" placeholder=" " id="total-money" readonly>
+    </div>
+    <div class="col-md-6 my-1">
+      <button type="button" class="btn btn-outline-info btn-block" onclick="addDollar()">Add Dollar</button>
+    </div>
+    <div class="col-md-6 my-1">
+      <button type="button" class="btn btn-outline-info btn-block" onclick="addQuarter()">Add Quarter</button>
+    </div>
+    <div class="col-md-6 my-1">
+      <button type="button" class="btn btn-outline-info btn-block" onclick="addDime()">Add Dime</button>
+    </div>
+    <div class="col-md-6 my-1">
+      <button type="button" class="btn btn-outline-info btn-block" onclick="addNickel()">Add Nickel</button>
+    </div>
+  </div>
+</form>
+<hr>
+
+
+  <!-- Item Selection Form -->
+<form id="select-item-form">
+  <div class="form-row my-3">
+    <div class="col-sm-12">
+      <label for="messages">Messages</label>
+      <div>
+      <input type="text" class="form-control" id="messages" readonly>
+      </div>
+    </div>
+  </div>
+  <div class="form-row justify-content-md-center my-1">
+    <div class="col-4">
+      <label for="item-select">Item:</label>
+      </div>
+      <div class="col-8">
+      <input type="text" class="form-control" placeholder=" " id="item-select" readonly>
+    </div>
+    </div>
+    <div class="form-row justify-content-md-center">
+      <div class="col-md-8 my-1">
+      <button type="button" class="btn btn-outline-success btn-block"  onclick="makeAPurchase()">Make Purchase</button>
+    </div>
+    </div>
+</form>
+<hr>
+
+
+ <!-- Change Form -->
+<form  id="change-form">
+    <div class="col-sm-12">
+      <label for="total-money">Change:</label>
+      <div class="alert alert-secondary" role="alert" id="total-change">
+      <p> </p></div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-8 my-1 col align-self-center">
+      <button type="button" class="btn btn-outline-dark btn-block" onclick="makeChange()">Change Return</button>
+    </div>
+  </div>
+</form>
+
+
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="js/home.js"></script>
+</body>
+
+</html>
