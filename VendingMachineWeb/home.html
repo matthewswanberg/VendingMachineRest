@@ -4,12 +4,36 @@
 	<title>VendingMachineWeb</title>
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+  <style type="text/css">
+    #vending-item-container {
+
+      min-height: 225px;
+    }
+
+    .header {
+      font-family: 'Pacifico', cursive;
+      font-size: 4.0em;
+      color: white;
+
+    }
+
+    #center {
+
+      text-align: center;
+    }
+  </style>
+
 </head>
+
 
 <body>
 
-<nav class="navbar navbar-dark bg-dark mb-2">
-  <h1 class="navbar-brand">Vending Machine</h1>
+<nav class="bg-dark mb-2 text-center">
+  <div id="center">
+  <h1 class="header py-5">Vending <i class="fas fa-money-bill-wave"></i> Machine</h1>
+  </div>
 </nav>
 
 
@@ -46,16 +70,16 @@
       <label for="total-money">Total $:</label>
       <input type="text" class="form-control" placeholder=" " id="total-money" readonly>
     </div>
-    <div class="col-md-6 my-1">
+    <div class="col-6 col-sm-12 col-lg-6 my-1">
       <button type="button" class="btn btn-outline-info btn-block" onclick="addDollar()">Add Dollar</button>
     </div>
-    <div class="col-md-6 my-1">
+    <div class="col-6 col-sm-12 col-lg-6 my-1">
       <button type="button" class="btn btn-outline-info btn-block" onclick="addQuarter()">Add Quarter</button>
     </div>
-    <div class="col-md-6 my-1">
+    <div class="col-6 col-sm-12 col-lg-6 my-1">
       <button type="button" class="btn btn-outline-info btn-block" onclick="addDime()">Add Dime</button>
     </div>
-    <div class="col-md-6 my-1">
+    <div class="col-6 col-sm-12 col-lg-6 my-1">
       <button type="button" class="btn btn-outline-info btn-block" onclick="addNickel()">Add Nickel</button>
     </div>
   </div>

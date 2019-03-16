@@ -23,10 +23,10 @@ function loadItems(){
 				var price = item.price;
 				var quantity = item.quantity;
 
-				 var row = '<div class="col-lg-4 col-md-6 px-1 py-2">';
-					row += '<div class="card btn-outline-dark" onclick="sendItemToForm(' + itemId + ')">';
+				 var row = '<div class="col-lg-4 col-md-6 px-1 py-2" >';
+					row += '<div class="card card-block btn-outline-dark" onclick="sendItemToForm(' + itemId + ')" id="vending-item-container">';
 					row += '<div class="card-body">';
-					row += '<p><i class="fas fa-box fa-2x"></i></p>';
+					row += '<p><i class="fas fa-gift fa-2x"></i></p>';
 					row += '<h5 class="card-title my-2" id="item-name">' + itemId + ' - ' + name + '</h5>';
 					row += '<p class="card-text" id="item-price">$ ' + price + '</p>';
 					row += '<p class="card-text" id="item-quantity">Quantity Left: '+ quantity + '</p></div></div></div>'
@@ -49,6 +49,7 @@ function loadItems(){
 }
 
 function sendItemToForm(itemId) {
+	$('#messages').val('');
 	$('#total-change').empty();
 	$('#total-change').append('<p> </p>');
 
@@ -124,6 +125,8 @@ function makeAPurchase() {
 	var amount = $('#total-money').val();
 
 
+
+
 		$.ajax({
 
 		type: 'GET',
@@ -134,6 +137,8 @@ function makeAPurchase() {
 		$('#total-change').append('<p>' + data.quarters + " Quarters</p>" 
 			+ '<p>' + data.dimes + " Dimes" +'</p><p>' + data.nickels + " Nickels" + '</p><p>' + data.pennies + " Pennies</p>")
 		$('#total-money').val(0)
+
+		loadItems();
 		$('#messages').val("Thank You!");
 	},
 	
@@ -146,7 +151,6 @@ function makeAPurchase() {
 });
 
 
-loadItems();
 		
 	}
 
